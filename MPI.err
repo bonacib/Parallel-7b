@@ -1,0 +1,32 @@
+MPI.cpp:207:3: internal compiler error: Illegal instruction
+   double performance = (double)MAXSHIFTS*(double)NUMELEMENTS/seconds/1000000.; // mega-elements computed per second
+   ^~~~~~
+0xb3d24f crash_signal
+	/tmp/root/spack-stage/spack-stage-gcc-8.3.0-5ipgfszqu3prfnnim4e5d3smnmhqfqly/spack-src/gcc/toplev.c:325
+0x2b3be436fd88 parsed_string_to_mpfr
+	/tmp/root/spack-stage/spack-stage-mpfr-3.1.6-nsgsjfylcpv3hznfbpiyw22mytku3tu5/spack-src/src/strtofr.c:558
+0x2b3be4371022 mpfr_strtofr
+	/tmp/root/spack-stage/spack-stage-mpfr-3.1.6-nsgsjfylcpv3hznfbpiyw22mytku3tu5/spack-src/src/strtofr.c:836
+0xab1b40 real_from_string(real_value*, char const*)
+	/tmp/root/spack-stage/spack-stage-gcc-8.3.0-5ipgfszqu3prfnnim4e5d3smnmhqfqly/spack-src/gcc/real.c:2107
+0xab251b real_from_string3(real_value*, char const*, format_helper)
+	/tmp/root/spack-stage/spack-stage-gcc-8.3.0-5ipgfszqu3prfnnim4e5d3smnmhqfqly/spack-src/gcc/real.c:2173
+0x756b5f interpret_float
+	/tmp/root/spack-stage/spack-stage-gcc-8.3.0-5ipgfszqu3prfnnim4e5d3smnmhqfqly/spack-src/gcc/c-family/c-lex.c:937
+0x757d1c c_lex_with_flags(tree_node**, unsigned int*, unsigned char*, int)
+	/tmp/root/spack-stage/spack-stage-gcc-8.3.0-5ipgfszqu3prfnnim4e5d3smnmhqfqly/spack-src/gcc/c-family/c-lex.c:437
+0x6729ee cp_lexer_get_preprocessor_token
+	/tmp/root/spack-stage/spack-stage-gcc-8.3.0-5ipgfszqu3prfnnim4e5d3smnmhqfqly/spack-src/gcc/cp/parser.c:786
+0x6a7d23 cp_lexer_new_main
+	/tmp/root/spack-stage/spack-stage-gcc-8.3.0-5ipgfszqu3prfnnim4e5d3smnmhqfqly/spack-src/gcc/cp/parser.c:650
+0x6a7d23 cp_parser_new
+	/tmp/root/spack-stage/spack-stage-gcc-8.3.0-5ipgfszqu3prfnnim4e5d3smnmhqfqly/spack-src/gcc/cp/parser.c:3857
+0x6a7d23 c_parse_file()
+	/tmp/root/spack-stage/spack-stage-gcc-8.3.0-5ipgfszqu3prfnnim4e5d3smnmhqfqly/spack-src/gcc/cp/parser.c:39104
+0x75d816 c_common_parse_file()
+	/tmp/root/spack-stage/spack-stage-gcc-8.3.0-5ipgfszqu3prfnnim4e5d3smnmhqfqly/spack-src/gcc/c-family/c-opts.c:1147
+Please submit a full bug report,
+with preprocessed source if appropriate.
+Please include the complete backtrace with any bug report.
+See <https://github.com/spack/spack/issues> for instructions.
+Node   0 entered DoOneLocalAutocorrelation( )
