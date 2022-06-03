@@ -1,0 +1,13 @@
+
+The following have been reloaded with a version change:
+  1) openmpi/3.1_gcc-8.3 => openmpi/3.1
+
+Node   1 entered DoOneLocalAutocorrelation( )
+Node   2 entered DoOneLocalAutocorrelation( )
+Node   3 entered DoOneLocalAutocorrelation( )
+Node   4 entered DoOneLocalAutocorrelation( )
+Node   5 entered DoOneLocalAutocorrelation( )
+Node   6 entered DoOneLocalAutocorrelation( )
+Node   0 entered DoOneLocalAutocorrelation( )
+Node   7 entered DoOneLocalAutocorrelation( )
+  8 processors,    8388608 elements,   1557.87 mega-autocorrelations computed per second

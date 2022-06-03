@@ -15,7 +15,7 @@
 
 #define BIGSIGNALFILEBIN	(char*)"bigsignal.bin"
 // #define BIGSIGNALFILEASCII	(char*)"bigsignal.txt"
-#define CSVPLOTFILE		(char*)"plot.csv"
+#define CSVPLOTFILE		(char*)"plot_6.csv"
 
 // tag to "scatter":
 
@@ -88,21 +88,21 @@ main( int argc, char *argv[ ] )
 	{
 		BigSignal = new float [NUMELEMENTS+MAXSHIFTS];		// so we can duplicate part of the array
 
-// #ifdef ASCII
-// 		FILE *fp = fopen( BIGSIGNALFILEASCII, "r" );
-// 		if( fp == NULL )
-// 		{
-// 			fprintf( stderr, "Cannot open data file '%s'\n", BIGSIGNALFILEASCII );
-// 			return -1;
-// 		}
+#ifdef ASCII
+		FILE *fp = fopen( BIGSIGNALFILEASCII, "r" );
+		if( fp == NULL )
+		{
+			fprintf( stderr, "Cannot open data file '%s'\n", BIGSIGNALFILEASCII );
+			return -1;
+		}
 
-// 		for( int i = 0; i < NUMELEMENTS; i++ )
-// 		{
-// 			float f;
-// 			fscanf( fp, "%f", &f );
-// 			BigSignal[i] = f;
-// 		}
-// #endif
+		for( int i = 0; i < NUMELEMENTS; i++ )
+		{
+			float f;
+			fscanf( fp, "%f", &f );
+			BigSignal[i] = f;
+		}
+#endif
 
 #ifdef BINARY
 		FILE *fp = fopen( BIGSIGNALFILEBIN, "rb" );
@@ -176,7 +176,7 @@ main( int argc, char *argv[ ] )
 	}
 	else
 	{
-		MPI_Send( PPSums, MAXSHIFTS, MPI_FLOAT, me, 'S', MPI_COMM_WORLD );
+		MPI_Send( PPSums, MAXSHIFTS, MPI_FLOAT, BOSS, 'G', MPI_COMM_WORLD );
 	}
 
 	// receive the sums and add them into the overall sums:
@@ -189,7 +189,7 @@ main( int argc, char *argv[ ] )
 			if( src == BOSS )
 				continue;
 
-			MPI_Recv( tmpSums, MAXSHIFTS, MPI_FLOAT, BOSS, 'S', MPI_COMM_WORLD, &status );
+			MPI_Recv( tmpSums, MAXSHIFTS, MPI_FLOAT, src, 'G', MPI_COMM_WORLD, &status );
 			for( int s = 0; s < MAXSHIFTS; s++ )
 				BigSums[s] += tmpSums[s];
 		}

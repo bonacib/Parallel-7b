@@ -4,7 +4,8 @@ The following have been reloaded with a version change:
 
 Node   1 entered DoOneLocalAutocorrelation( )
 Node   2 entered DoOneLocalAutocorrelation( )
-Node   0 entered DoOneLocalAutocorrelation( )
 Node   3 entered DoOneLocalAutocorrelation( )
-  4 processors,    8388608 elements,   1009.71 mega-autocorrelations computed per second
-  4 processors,    8388608 elements,   1030.01 mega-autocorrelations computed per second
+Node   4 entered DoOneLocalAutocorrelation( )
+Node   0 entered DoOneLocalAutocorrelation( )
+Node   5 entered DoOneLocalAutocorrelation( )
+  6 processors,    8388608 elements,   1170.31 mega-autocorrelations computed per second
