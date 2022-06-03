@@ -15,7 +15,7 @@
 
 #define BIGSIGNALFILEBIN	(char*)"bigsignal.bin"
 // #define BIGSIGNALFILEASCII	(char*)"bigsignal.txt"
-#define CSVPLOTFILE		(char*)"plot_6.csv"
+#define CSVPLOTFILE		(char*)"plot_10.csv"
 
 // tag to "scatter":
 
